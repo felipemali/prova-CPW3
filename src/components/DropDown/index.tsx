@@ -11,13 +11,7 @@ const DropDown = ({ setOrientation, setOrderBy }: DropDownProps) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
-    if (open) {
-      setTimeout(() => {
-        setOpen(!open);
-      }, 500);
-    } else {
-      setOpen(true);
-    }
+    setOpen(!open);
   };
 
   return (
@@ -28,43 +22,17 @@ const DropDown = ({ setOrientation, setOrderBy }: DropDownProps) => {
       {open ? (
         <ul className={styles.menu}>
           <li className="menu-item">
-            <button
-              onClick={() => {
-                setOrderBy("relevant");
-                handleOpen();
-              }}
-            >
-              Relevância
-            </button>
+            <button onClick={() => setOrderBy("relevant")}>Relevância</button>
           </li>
 
           <li>
-            <button
-              onClick={() => {
-                setOrderBy("latest");
-                handleOpen();
-              }}
-            >
-              Recentes
-            </button>
+            <button onClick={() => setOrderBy("latest")}>Recentes</button>
           </li>
           <li>
-            <button
-              onClick={() => {
-                setOrientation("portrait");
-                handleOpen();
-              }}
-            >
-              Retrato
-            </button>
+            <button onClick={() => setOrientation("portrait")}>Retrato</button>
           </li>
           <li>
-            <button
-              onClick={() => {
-                setOrientation("landscape");
-                handleOpen();
-              }}
-            >
+            <button onClick={() => setOrientation("landscape")}>
               Paisagem
             </button>
           </li>
